@@ -1,1 +1,0 @@
-start jlink-image\bin\javaw -jar modules\Chez-0.0.jar
