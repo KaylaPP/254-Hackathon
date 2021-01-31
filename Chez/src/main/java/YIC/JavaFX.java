@@ -40,15 +40,17 @@ public class JavaFX extends Application {
         Text text3 = new Text("©Young Innovators Club 2021");
         Text text4 = new Text("Broward County");
 
+        ChoiceBox<String> choiceBox1 = new ChoiceBox();
+
         FileInputStream inputStream1 = new FileInputStream("src/main/resources/images/fl.png");
         Image image1 = new Image(inputStream1);
         ImageView imageView1 = new ImageView(image1);
 
-        FileInputStream inputStream2 = new FileInputStream("src/main/resources/images/orangehospitals.png");
+        FileInputStream inputStream2 = new FileInputStream("src/main/resources/images/orange.png");
         Image image2 = new Image(inputStream2);
         ImageView imageView2 = new ImageView(image2);
 
-        FileInputStream inputStream3 = new FileInputStream("src/main/resources/images/browardhospitals.png");
+        FileInputStream inputStream3 = new FileInputStream("src/main/resources/images/broward.png");
         Image image3 = new Image(inputStream3);
         ImageView imageView3 = new ImageView(image3);
 
@@ -82,7 +84,7 @@ public class JavaFX extends Application {
         imageView3.setPreserveRatio(true);
 
         text4.setFont(Font.font("bowlby one sc", FontWeight.BOLD, FontPosture.REGULAR, 46.5));
-        text4.setX(680);
+        text4.setX(780);
         text4.setY(60);
         text4.setFill(Color.rgb(121, 209, 33));
         text4.setStrokeWidth(3);
@@ -100,11 +102,35 @@ public class JavaFX extends Application {
         imageView2.setPreserveRatio(true);
 
         text1.setFont(Font.font("bowlby one sc", FontWeight.BOLD, FontPosture.REGULAR, 46.5));
-        text1.setX(680);
+        text1.setX(820);
         text1.setY(60);
         text1.setFill(Color.rgb(121, 209, 33));
         text1.setStrokeWidth(3);
         text1.setStroke(Color.rgb(0, 0, 0));
+
+        choiceBox1.getItems().add("Aspire Health Partners");
+        choiceBox1.getItems().add("Brookwood Community Hospital");
+        choiceBox1.getItems().add("Cancer Center of Florida");
+        choiceBox1.getItems().add("Central Florida Hospital");
+        choiceBox1.getItems().add("Doctor P Phillips Hospital");
+        choiceBox1.getItems().add("Florida Hospital Apopka");
+        choiceBox1.getItems().add("Florida Hospital East Orlando");
+        choiceBox1.getItems().add("Florida Hospital of Maitland");
+        choiceBox1.getItems().add("Florida Hospital Orlando");
+        choiceBox1.getItems().add("Florida Hospital Winter Park Memorial Hospital");
+        choiceBox1.getItems().add("Florida Sanitarium");
+        choiceBox1.getItems().add("Health Central Hospital");
+        choiceBox1.getItems().add("Lakeside Alternatives Treatment Facility");
+        choiceBox1.getItems().add("Orlando Health Arnold Palmer Hospital for Children");
+        choiceBox1.getItems().add("Orlando Health Orlando Regional Medical Center");
+        choiceBox1.getItems().add("Orlando Regional Medical Center Lucerne Pavilion");
+        choiceBox1.getItems().add("Orlando Surgery Center");
+        choiceBox1.getItems().add("Princeton Hospital");
+        choiceBox1.getItems().add("Walt Disney Memorial Cancer Institute");
+        choiceBox1.getItems().add("Winter Park Ambulatory Surgery Center");
+        choiceBox1.getItems().add("Winter Park Womens Center");
+        choiceBox1.setLayoutX(400);
+        choiceBox1.setLayoutY(400);
 
         //SIZE AND POS - SCENEMAIN
         text2.setFont(Font.font("bowlby one sc", FontWeight.BOLD, FontPosture.REGULAR, 46.5));
@@ -144,7 +170,7 @@ public class JavaFX extends Application {
         //Group
         Group rootBroward = new Group(imageView3, bbutton1, text4);
         Group rootMain = new Group(imageView1, button3, button4, text2, text3);
-        Group rootOrange = new Group(imageView2, bbutton2, text1);
+        Group rootOrange = new Group(imageView2, bbutton2, text1, choiceBox1);
 
         //Node Style
         button3.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 14px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
