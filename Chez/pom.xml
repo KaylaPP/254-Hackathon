@@ -25,6 +25,12 @@
             <artifactId>javafx-media</artifactId>
             <version>11</version>
         </dependency>
+    
+      <dependency>
+        <groupId>org.ofdrw</groupId>
+        <artifactId>ofdrw-font</artifactId>
+        <version>1.7.3</version>
+      </dependency>
     </dependencies>
 
     <build>
