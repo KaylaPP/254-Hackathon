@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
@@ -36,11 +37,15 @@ public class JavaFX extends Application {
 
         // Creating Elements
         Text text1 = new Text("Orange County");
-        Text text2 = new Text("COVID-19 \nHospital Resource \nLocator");
+        Text text2 = new Text("COVID-19 \nHospital \nInformation");
         Text text3 = new Text("©Young Innovators Club 2021");
         Text text4 = new Text("Broward County");
 
+        TextArea textArea1 = new TextArea();
+        TextArea textArea2 = new TextArea();
+
         ChoiceBox<String> choiceBox1 = new ChoiceBox();
+        ChoiceBox<String> choiceBox2 = new ChoiceBox();
 
         FileInputStream inputStream1 = new FileInputStream("src/main/resources/images/fl.png");
         Image image1 = new Image(inputStream1);
@@ -65,6 +70,8 @@ public class JavaFX extends Application {
 
         Button button3 = new Button("Orange County");
         Button button4 = new Button("Broward County");
+        Button button5 = new Button("ENTER");
+        Button button6 = new Button("ENTER");
 
         Button bbutton1 = new Button("MAIN MENU");
         Button bbutton2 = new Button("MAIN MENU");
@@ -76,6 +83,10 @@ public class JavaFX extends Application {
         bbutton1.setLayoutX(0);
         bbutton1.setLayoutY(670);
         bbutton1.setMinSize(100, 50);
+
+        button6.setLayoutX(1178);
+        button6.setLayoutY(670);
+        button6.setMinSize(100, 50);
 
         imageView3.setX(0);
         imageView3.setY(0);
@@ -90,10 +101,70 @@ public class JavaFX extends Application {
         text4.setStrokeWidth(3);
         text4.setStroke(Color.rgb(0, 0, 0));
 
+        textArea2.setLayoutX(200);
+        textArea2.setLayoutY(175);
+        textArea2.setMinSize(500, 350);
+        textArea2.setEditable(false);
+
+        choiceBox2.getItems().add("Atlantic Shores Healthcare Center");
+        choiceBox2.getItems().add("Atlantic Shores Hospital");
+        choiceBox2.getItems().add("Broward General Hospital");
+        choiceBox2.getItems().add("Broward Health Imperial Point");
+        choiceBox2.getItems().add("Broward Health Medical Center");
+        choiceBox2.getItems().add("Cleveland Clinic Florida");
+        choiceBox2.getItems().add("Continuing Care Services");
+        choiceBox2.getItems().add("Coral Ridge Psychiatric Hospital");
+        choiceBox2.getItems().add("Coral Springs Medical Center");
+        choiceBox2.getItems().add("Doctors General Hospital");
+        choiceBox2.getItems().add("Doctors Hospital of Hollywood");
+        choiceBox2.getItems().add("Florida Medical Center");
+        choiceBox2.getItems().add("Fort Lauderdale Hospital");
+        choiceBox2.getItems().add("HealthSouth Sunrise Rehabilitation Hospital");
+        choiceBox2.getItems().add("Henderson Crisis Stabilization Unit");
+        choiceBox2.getItems().add("Hollywood Memorial Walk In Medical Center");
+        choiceBox2.getItems().add("Holy Cross Hospital");
+        choiceBox2.getItems().add("Humana Hospital Bennett");
+        choiceBox2.getItems().add("Humana Hospital Cypress");
+        choiceBox2.getItems().add("Humana Hospital of South Broward");
+        choiceBox2.getItems().add("Joe DiMaggio Children's Hospital");
+        choiceBox2.getItems().add("Kindred Hospital - South Florida Fort Lauderdale");
+        choiceBox2.getItems().add("Kindred Hospital Hollywood");
+        choiceBox2.getItems().add("Larkin Community Hospital - Behavioral Health Services");
+        choiceBox2.getItems().add("Las Olas General Hospital");
+        choiceBox2.getItems().add("Manor Oaks Hospital");
+        choiceBox2.getItems().add("Memorial Hospital Miramar");
+        choiceBox2.getItems().add("Memorial Hospital Pembroke");
+        choiceBox2.getItems().add("Memorial Hospital West");
+        choiceBox2.getItems().add("Memorial Regional Hospital");
+        choiceBox2.getItems().add("Memorial Regional Hospital South");
+        choiceBox2.getItems().add("North Beach Community Hospital");
+        choiceBox2.getItems().add("North Broward Medical Center");
+        choiceBox2.getItems().add("North Ridge Medical Center");
+        choiceBox2.getItems().add("Northwest Medical Center");
+        choiceBox2.getItems().add("Pembroke Pines General Hospital");
+        choiceBox2.getItems().add("Plantation General Hospital");
+        choiceBox2.getItems().add("Provident Hospital");
+        choiceBox2.getItems().add("Saint Anthonys Rehabilitation Hospital");
+        choiceBox2.getItems().add("Saint Johns Nursing and Rehabilitation Hospital");
+        choiceBox2.getItems().add("South Florida State Hospital");
+        choiceBox2.getItems().add("Sunrise Hospital");
+        choiceBox2.getItems().add("University Community Hospital");
+        choiceBox2.getItems().add("University Hospital and Medical Center");
+        choiceBox2.getItems().add("Vencor Hospital of Fort Lauderdale");
+        choiceBox2.getItems().add("West Broward Hospital");
+        choiceBox2.getItems().add("Westside Regional Medical Center");
+        choiceBox2.setLayoutX(450);
+        choiceBox2.setLayoutY(670);
+        choiceBox2.setMinSize(650, 50);
+
         //SIZE AND POS - SCENEORANGE
         bbutton2.setLayoutX(0);
         bbutton2.setLayoutY(670);
         bbutton2.setMinSize(100, 50);
+
+        button5.setLayoutX(1178);
+        button5.setLayoutY(670);
+        button5.setMinSize(100, 50);
 
         imageView2.setX(0);
         imageView2.setY(0);
@@ -107,6 +178,11 @@ public class JavaFX extends Application {
         text1.setFill(Color.rgb(121, 209, 33));
         text1.setStrokeWidth(3);
         text1.setStroke(Color.rgb(0, 0, 0));
+
+        textArea1.setLayoutX(200);
+        textArea1.setLayoutY(175);
+        textArea1.setMinSize(500, 350);
+        textArea1.setEditable(false);
 
         choiceBox1.getItems().add("Aspire Health Partners");
         choiceBox1.getItems().add("Brookwood Community Hospital");
@@ -129,8 +205,9 @@ public class JavaFX extends Application {
         choiceBox1.getItems().add("Walt Disney Memorial Cancer Institute");
         choiceBox1.getItems().add("Winter Park Ambulatory Surgery Center");
         choiceBox1.getItems().add("Winter Park Womens Center");
-        choiceBox1.setLayoutX(400);
-        choiceBox1.setLayoutY(400);
+        choiceBox1.setLayoutX(480);
+        choiceBox1.setLayoutY(670);
+        choiceBox1.setMinSize(650, 50);
 
         //SIZE AND POS - SCENEMAIN
         text2.setFont(Font.font("bowlby one sc", FontWeight.BOLD, FontPosture.REGULAR, 46.5));
@@ -168,15 +245,21 @@ public class JavaFX extends Application {
         scaleTransition1.play();
 
         //Group
-        Group rootBroward = new Group(imageView3, bbutton1, text4);
+        Group rootBroward = new Group(imageView3, bbutton1, text4, choiceBox2, button6, textArea2);
         Group rootMain = new Group(imageView1, button3, button4, text2, text3);
-        Group rootOrange = new Group(imageView2, bbutton2, text1, choiceBox1);
+        Group rootOrange = new Group(imageView2, bbutton2, text1, choiceBox1, button5, textArea1);
 
         //Node Style
         button3.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 14px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
         button4.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 14px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+        button5.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+        button6.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
         bbutton1.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
         bbutton2.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+        choiceBox1.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+        choiceBox2.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+        textArea1.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+        textArea2.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
 
         //Scenes
         Scene sceneOrange = new Scene(rootOrange, sceneOrangeResX, sceneOrangeResY);
@@ -250,14 +333,77 @@ public class JavaFX extends Application {
         button4.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_ENTERED, eventHandlerButton4B);
 
         javafx.event.EventHandler<javafx.scene.input.MouseEvent> eventHandlerButton4C = 
-        new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
-            @Override
-            public void handle(javafx.scene.input.MouseEvent e) {
-                button4.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 14px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
-            }
-        };
+            new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
+                @Override
+                public void handle(javafx.scene.input.MouseEvent e) {
+                    button4.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 14px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+                }
+            };
 
         button4.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_EXITED, eventHandlerButton4C);
+
+            //BUTTON 5
+        javafx.event.EventHandler<javafx.scene.input.MouseEvent> eventHandlerButton5 = 
+            new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
+                @Override
+                public void handle(javafx.scene.input.MouseEvent e) {
+                    String selectedHospital1 = choiceBox1.getSelectionModel().getSelectedItem();
+                }
+            };
+
+        button5.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_ENTERED, eventHandlerButton5);
+
+        javafx.event.EventHandler<javafx.scene.input.MouseEvent> eventHandlerButton5B = 
+            new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
+                @Override
+                public void handle(javafx.scene.input.MouseEvent e) {
+                    button5.setStyle("-fx-background-color: lightblue; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+                }
+            };
+
+        button5.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_ENTERED, eventHandlerButton5B);
+
+        javafx.event.EventHandler<javafx.scene.input.MouseEvent> eventHandlerButton5C = 
+            new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
+                @Override
+                public void handle(javafx.scene.input.MouseEvent e) {
+                    button5.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+                }
+            };
+
+        button5.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_EXITED, eventHandlerButton5C);
+
+
+            //BUTTON 6
+        javafx.event.EventHandler<javafx.scene.input.MouseEvent> eventHandlerButton6 = 
+            new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
+                @Override
+                public void handle(javafx.scene.input.MouseEvent e) {
+                    String selectedHospital2 = choiceBox2.getSelectionModel().getSelectedItem();
+                }
+            };
+
+        button6.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_ENTERED, eventHandlerButton6);
+
+        javafx.event.EventHandler<javafx.scene.input.MouseEvent> eventHandlerButton6B = 
+            new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
+                @Override
+                public void handle(javafx.scene.input.MouseEvent e) {
+                    button6.setStyle("-fx-background-color: lightblue; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+                }
+            };
+
+        button6.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_ENTERED, eventHandlerButton6B);
+
+        javafx.event.EventHandler<javafx.scene.input.MouseEvent> eventHandlerButton6C = 
+            new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
+                @Override
+                public void handle(javafx.scene.input.MouseEvent e) {
+                    button6.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+                }
+            };
+
+        button6.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_EXITED, eventHandlerButton6C);
 
 
             //BACK BUTTON SPHERE (1)
