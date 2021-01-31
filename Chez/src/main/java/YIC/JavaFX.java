@@ -8,6 +8,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
@@ -32,18 +34,13 @@ public class JavaFX extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        //Creating Elements
-        Text text1 = new Text("Name");
+        // Creating Elements
         Text text2 = new Text("COVID-19 Hospital Resource Locator");
         Text text3 = new Text("©Young Innovators Club 2021");
 
         FileInputStream inputStream = new FileInputStream("src/main/resources/images/backgroundCode.png");
         Image image = new Image(inputStream);
         ImageView imageView = new ImageView(image);
-
-        Sphere sphere1 = new Sphere();
-        Sphere sphere2 = new Sphere();
-        Sphere sphere3 = new Sphere();
 
         double sceneCovidResX = 1280;
         double sceneCovidResY = 720;
@@ -54,40 +51,24 @@ public class JavaFX extends Application {
         double sceneSphereResX = 1280;
         double sceneSphereResY = 720;
 
-        TextField textField1 = new TextField();
+        Button button3 = new Button("COUNTY 1");
+        Button button4 = new Button("COUNTY 2");
 
-        Button button1 = new Button("ENTER");
-        Button button2 = new Button("See your name :)");
-        Button button3 = new Button("COVID-19");
-        Button button4 = new Button("Graphics");
-
-        Button bbutton1 = new Button("BACK");
-        Button bbutton2 = new Button("BACK");
+        Button bbutton1 = new Button("MAIN MENU");
+        Button bbutton2 = new Button("MAIN MENU");
 
         ScaleTransition scaleTransition1 = new ScaleTransition();
         
 
         //SIZE AND POS - SCENESPHERE
-        sphere1.setRadius(50.0);
-        sphere1.setTranslateX(150);
-        sphere1.setTranslateY(225);
-        sphere1.setCullFace(CullFace.FRONT);
-
-        sphere2.setRadius(50.0);
-        sphere2.setTranslateX(450);
-        sphere2.setTranslateY(225);
-        sphere2.setCullFace(CullFace.BACK);
-        
-        sphere3.setRadius(50.0);
-        sphere3.setTranslateX(750);
-        sphere3.setTranslateY(225);
-        sphere3.setCullFace(CullFace.NONE);
+        bbutton1.setLayoutX(0);
+        bbutton1.setLayoutY(670);
+        bbutton1.setMinSize(100, 50);
 
         //SIZE AND POS - SCENECOVID
-        text1.setFont(Font.font("bowlby one sc", FontWeight.BOLD, FontPosture.REGULAR, 22.5));
-        text1.setX(577.5);
-        text1.setY(45);
-        text1.setFill(Color.BLACK);
+        bbutton2.setLayoutX(0);
+        bbutton2.setLayoutY(670);
+        bbutton2.setMinSize(100, 50);
 
 
         //SIZE AND POS - SCENEMAIN
@@ -126,16 +107,15 @@ public class JavaFX extends Application {
         scaleTransition1.play();
 
         //Group
-        Group rootSphere = new Group(sphere1, sphere2, sphere3, bbutton1);
+        Group rootSphere = new Group(bbutton1);
         Group rootMain = new Group(imageView, button3, button4, text2, text3);
-        Group rootCovid = new Group(text1, textField1, button1, button2, bbutton2);
+        Group rootCovid = new Group(bbutton2);
 
         //Node Style
-        button1.setStyle("-fx-background-color: lightblue; -fx-text-fill: darkslateblue; -fx-font: normal bold 21px 'consola';");
-        button2.setStyle("-fx-background-color: lightblue; -fx-text-fill: darkslateblue; -fx-font: normal bold 21px 'consola';");
-        button3.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 37.5px 'bowlby one sc'; -fx-border-width: 3; -fx-border-color: black;");
-        button4.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 37.5px 'bowlby one sc'; -fx-border-width: 3; -fx-border-color: black;");
-        text1.setStyle("-fx-font: normal bold 21px 'consola'");
+        button3.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 37.5px 'bowlby one sc'; -fx-border-width: 5; -fx-border-color: black;");
+        button4.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 37.5px 'bowlby one sc'; -fx-border-width: 5; -fx-border-color: black;");
+        bbutton1.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+        bbutton2.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
 
         //Scenes
         Scene sceneCovid = new Scene(rootCovid, sceneCovidResX, sceneCovidResY);
@@ -170,7 +150,7 @@ public class JavaFX extends Application {
             new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
                 @Override
                 public void handle(javafx.scene.input.MouseEvent e) {
-                    button3.setStyle("-fx-background-color: lightblue; -fx-text-fill: darkslateblue; -fx-font: normal bold 37.5px 'bowlby one sc'; -fx-border-width: 3; -fx-border-color: black;");
+                    button3.setStyle("-fx-background-color: lightblue; -fx-text-fill: darkslateblue; -fx-font: normal bold 37.5px 'bowlby one sc'; -fx-border-width: 5; -fx-border-color: black;");
                 }
             };
 
@@ -180,11 +160,11 @@ public class JavaFX extends Application {
         new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
             @Override
             public void handle(javafx.scene.input.MouseEvent e) {
-                button3.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 37.5px 'bowlby one sc'; -fx-border-width: 3; -fx-border-color: black;");
+                button3.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 37.5px 'bowlby one sc'; -fx-border-width: 5; -fx-border-color: black;");
             }
         };
 
-    button3.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_EXITED, eventHandlerButton3C);
+        button3.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_EXITED, eventHandlerButton3C);
         
             //BUTTON 4
         javafx.event.EventHandler<javafx.scene.input.MouseEvent> eventHandlerButton4 = 
@@ -202,7 +182,7 @@ public class JavaFX extends Application {
             new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
                 @Override
                 public void handle(javafx.scene.input.MouseEvent e) {
-                    button4.setStyle("-fx-background-color: lightblue; -fx-text-fill: darkslateblue; -fx-font: normal bold 37.5px 'bowlby one sc'; -fx-border-width: 3; -fx-border-color: black;");
+                    button4.setStyle("-fx-background-color: lightblue; -fx-text-fill: darkslateblue; -fx-font: normal bold 37.5px 'bowlby one sc'; -fx-border-width: 5; -fx-border-color: black;");
                 }
             };
 
@@ -212,14 +192,14 @@ public class JavaFX extends Application {
         new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
             @Override
             public void handle(javafx.scene.input.MouseEvent e) {
-                button4.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 37.5px 'bowlby one sc'; -fx-border-width: 3; -fx-border-color: black;");
+                button4.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 37.5px 'bowlby one sc'; -fx-border-width: 5; -fx-border-color: black;");
             }
         };
 
-    button4.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_EXITED, eventHandlerButton4C);
+        button4.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_EXITED, eventHandlerButton4C);
 
 
-            //BACK BUTTON 1
+            //BACK BUTTON SPHERE (1)
         javafx.event.EventHandler<javafx.scene.input.MouseEvent> eventHandlerBbutton1 = 
             new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
                 @Override
@@ -231,6 +211,27 @@ public class JavaFX extends Application {
 
         bbutton1.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_CLICKED, eventHandlerBbutton1);
 
+        javafx.event.EventHandler<javafx.scene.input.MouseEvent> eventHandlerBbutton1B = 
+            new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
+                @Override
+                public void handle(javafx.scene.input.MouseEvent e) {
+                    bbutton1.setStyle("-fx-background-color: lightblue; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+                }
+            };
+
+        bbutton1.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_ENTERED, eventHandlerBbutton1B);
+
+        javafx.event.EventHandler<javafx.scene.input.MouseEvent> eventHandlerBbutton1C = 
+            new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
+                @Override
+                public void handle(javafx.scene.input.MouseEvent e) {
+                    bbutton1.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+                }
+            };
+
+        bbutton1.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_EXITED, eventHandlerBbutton1C);
+
+            //BACK BUTTON COVID (2)
         javafx.event.EventHandler<javafx.scene.input.MouseEvent> eventHandlerBbutton2 = 
             new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
                 @Override
@@ -242,8 +243,25 @@ public class JavaFX extends Application {
 
         bbutton2.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_CLICKED, eventHandlerBbutton2);
 
+        javafx.event.EventHandler<javafx.scene.input.MouseEvent> eventHandlerBbutton2B = 
+            new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
+                @Override
+                public void handle(javafx.scene.input.MouseEvent e) {
+                    bbutton2.setStyle("-fx-background-color: lightblue; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+                }
+            };
 
+        bbutton2.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_ENTERED, eventHandlerBbutton2B);
 
+        javafx.event.EventHandler<javafx.scene.input.MouseEvent> eventHandlerBbutton2C = 
+            new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
+                @Override
+                public void handle(javafx.scene.input.MouseEvent e) {
+                    bbutton2.setStyle("-fx-background-color: beige; -fx-text-fill: darkslateblue; -fx-font: normal bold 20px 'bowlby one sc'; -fx-border-width: 2; -fx-border-color: black;");
+                }
+            };
+
+        bbutton2.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_EXITED, eventHandlerBbutton2C);
 
         primaryStage.setTitle("Young Innovators Club");
         primaryStage.setResizable(false);
