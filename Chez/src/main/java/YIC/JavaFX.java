@@ -110,6 +110,7 @@ public class JavaFX extends Application {
         textArea2.setLayoutY(175);
         textArea2.setMinSize(500, 350);
         textArea2.setEditable(false);
+        textArea2.appendText("[INSERT SAMPLE RESOURCES HERE]");
 
         choiceBox2.getItems().add("Atlantic Shores Healthcare Center");
         choiceBox2.getItems().add("Atlantic Shores Hospital");
@@ -188,6 +189,7 @@ public class JavaFX extends Application {
         textArea1.setLayoutY(175);
         textArea1.setMinSize(500, 350);
         textArea1.setEditable(false);
+        textArea1.appendText("[INSERT SAMPLE RESOURCES HERE]");
 
         choiceBox1.getItems().add("Aspire Health Partners");
         choiceBox1.getItems().add("Brookwood Community Hospital");
