@@ -27,6 +27,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.sql.*;
 
@@ -40,6 +41,10 @@ public class JavaFX extends Application {
         Text text2 = new Text("COVID-19 \nHospital \nInformation");
         Text text3 = new Text("©Young Innovators Club 2021");
         Text text4 = new Text("Broward County");
+
+        buffer bufRead = new buffer();
+
+        String hospitalInfo = "src/main/resources/hospitalinfo.txt";
 
         TextArea textArea1 = new TextArea();
         TextArea textArea2 = new TextArea();
@@ -285,6 +290,7 @@ public class JavaFX extends Application {
                 public void handle(javafx.scene.input.MouseEvent e) {
                     primaryStage.setScene(sceneOrange);
                     primaryStage.show();
+                    //textArea1.appendText(bufRead.BufferedReader());
                 }
             };
 
